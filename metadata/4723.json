@@ -1,0 +1,15 @@
+{
+  "name": "GANGSTER #4723",
+  "description": "GANGSTER \u2014 7,777 made men on BNB Chain. Your first mint is FREE, then bundle up: 1 for 0.0001 BNB, 2 for 0.00015 BNB, 5 for 0.0004 BNB, 10 for 0.0008 BNB. Six ranks: Street Punk, Hustler, Enforcer, Boss, Kingpin, and the mythic Godfather.",
+  "image": "https://gangster-eight.vercel.app/images/street-punk.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Rank",
+      "value": "Street Punk"
+    }
+  ]
+}

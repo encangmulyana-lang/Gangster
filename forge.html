@@ -22,7 +22,7 @@
 <div class="langpick-drawer"><button data-lang="en" class="on" onclick="setLang('en')">EN</button><button data-lang="ja" onclick="setLang('ja')">JA</button><button data-lang="zh" onclick="setLang('zh')">ZH</button><button data-lang="ko" onclick="setLang('ko')">KO</button></div>
 <div class="dfoot" data-i18n="dfoot">7,777 MADE MEN<br>FIRST MINT FREE · BNB CHAIN</div></aside>
 
-<div class="preview-bar" data-i18n="previewBar">FORGE v2 · MINT OPENS SOON · v1: 60 minted, pausing at launch</div>
+<div class="preview-bar" data-i18n="previewBar">FORGE v2 · MINT IS LIVE · v1: 60 minted, paused at launch</div>
 
 <div class="wrap">
 <section class="reveal">
@@ -30,7 +30,7 @@
 <h2 data-i18n="forgeH2">Forge your men<br>into <em class="grad">legends</em>.</h2>
 <p data-i18n="forgeIntro">Three Street Punks forge into one Hustler. Two Hustlers into one Enforcer — climb all the way to the Godfather. The first 100 forges are gas-only; after that, 1,000 $GANG burns per forge.</p>
 <div class="forge-count" id="forgeCount">—</div>
-<div class="forge-count-label" id="forgeCountNote" data-i18n="forgeCountSoon">Forge count loads when v2 deploys.</div>
+<div class="forge-count-label" id="forgeCountNote">FORGES SO FAR</div>
 <div class="ladder"><h3 data-i18n="forgeLadderH">THE FORGE LADDER</h3><div id="ladderRows"></div>
 <p class="ladder-note" data-i18n="forgeBurn">First 100 forges gas-only, then 1,000 $GANG burned per forge.</p></div>
 <div class="mintform" style="text-align:center">
@@ -39,7 +39,7 @@
 <p style="font-size:13px;color:#9A8F7A" data-i18n="forgePick">Enter the token IDs of the men to burn — 3 Street Punks, or 2 of any higher rank. All must be the same rank.</p>
 <button class="btn-ghost" style="width:100%;margin-top:12px" onclick="checkForgeIds()" data-en="CHECK IDS" data-ja="IDを確認" data-zh="检查ID" data-ko="ID 확인">CHECK IDS</button>
 <div id="forgeFeeLine" style="font-size:13px;margin-top:12px;color:#D4AF37;font-weight:700"></div>
-<button class="btn-gold" id="forgeBtn" onclick="forgeNow()" disabled data-i18n="forgeSoon">FORGE — OPENS SOON</button>
+<button class="btn-gold" id="forgeBtn" onclick="forgeNow()" disabled>FORGE — LOADING…</button>
 <div id="forgeMsg" style="font-size:13px;margin-top:12px;line-height:1.7"></div>
 <div class="nowallet" id="noWalletWarn"></div>
 </div>

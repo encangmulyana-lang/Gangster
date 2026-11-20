@@ -4,9 +4,9 @@
    Template fixes vs Moripals v3: forge() now takes token IDs (the v3 site
    encoded a nonexistent forge(uint256,uint256)); claim-count math subtracts
    the $GANG INITIAL_MINT; claim scan is chunked in 4000-block windows. */
-const NFT = "0x0000000000000000000000000000000000000000"; // GangsterV2, NOT DEPLOYED YET
-const MARKET = "0x0000000000000000000000000000000000000000"; // GangsterV2Market, NOT DEPLOYED YET
-const CLAIM = "0x0000000000000000000000000000000000000000"; // GangsterV2Claim, NOT DEPLOYED YET
+const NFT = "0xb08abeeC2B4963D157F5307bB01e92DAf03B0EE9"; // GangsterV2, DEPLOYED 2026-11-20
+const MARKET = "0x4dd493397A03E0A920De05952DBC9722c8257151"; // GangsterV2Market, DEPLOYED 2026-11-20
+const CLAIM = "0xEb37Ff47E12e419f08379F3Df39b43BE0abE26b4"; // GangsterV2Claim, DEPLOYED 2026-11-20
 const TOKEN = "0xA1b03171070C75012B64df281300e1EcEf983C4d"; // $GANG (v1 token, reused for v2)
 const DEPLOY_BLOCK = 0; // NFT deploy block — FILL AFTER DEPLOY (claim scan starts here)
 const ZERO = "0x0000000000000000000000000000000000000000";

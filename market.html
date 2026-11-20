@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GANGSTER — Market</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+</head>
+<body><canvas id="sky"></canvas>
+<div class="page">
+<header><div class="brand">✦ <b>GANGSTER</b> <span class="v3">FORGE v2</span></div>
+<nav class="navpills"><a href="index.html" data-en="Mint" data-ja="ミント" data-zh="铸造" data-ko="민트">Mint</a><a href="forge.html" data-en="Forge" data-ja="フォージ" data-zh="熔炉" data-ko="대장간">Forge</a><a href="claim.html">$GANG</a><a href="market.html" class="on" data-en="Market" data-ja="マーケット" data-zh="市场" data-ko="마켓">Market</a><a href="index.html#roadmap" data-en="Roadmap" data-ja="ロードマップ" data-zh="路线图" data-ko="로드맵">Roadmap</a><a href="https://x.com/gangstarnft_" target="_blank" rel="noopener">𝕏 @gangstarnft_</a></nav>
+<div class="langpick"><button data-lang="en" class="on" onclick="setLang('en')">EN</button><button data-lang="ja" onclick="setLang('ja')">JA</button><button data-lang="zh" onclick="setLang('zh')">ZH</button><button data-lang="ko" onclick="setLang('ko')">KO</button></div>
+<button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button></header>
+<div class="scrim" id="scrim" onclick="toggleMenu()"></div>
+<aside class="drawer" id="drawer"><div class="dlogo">✦ <b>GANGSTER</b></div>
+<a class="dlink cta" href="index.html#mint" onclick="toggleMenu()" data-en="🎩 Mint Your Man" data-ja="🎩 構成員をミント" data-zh="🎩 铸造你的成员" data-ko="🎩 조직원을 민트하기">🎩 Mint Your Man</a>
+<a class="dlink" href="forge.html" onclick="toggleMenu()" data-en="■ Forge" data-ja="■ フォージ" data-zh="■ 熔炉" data-ko="■ 대장간">■ Forge</a>
+<a class="dlink" href="claim.html" onclick="toggleMenu()" data-en="■ $GANG Token" data-ja="■ $GANGトークン" data-zh="■ $GANG代币" data-ko="■ $GANG 토큰">■ $GANG Token</a>
+<a class="dlink" href="market.html" onclick="toggleMenu()" data-en="■ Market" data-ja="■ マーケット" data-zh="■ 市场" data-ko="■ 마켓">■ Market</a>
+<a class="dlink" href="index.html#roadmap" onclick="toggleMenu()" data-en="■ Roadmap" data-ja="■ ロードマップ" data-zh="■ 路线图" data-ko="■ ロード맵">■ Roadmap</a>
+<a class="dlink" href="https://x.com/gangstarnft_" target="_blank" rel="noopener">𝕏 @gangstarnft_</a>
+<div class="langpick-drawer"><button data-lang="en" class="on" onclick="setLang('en')">EN</button><button data-lang="ja" onclick="setLang('ja')">JA</button><button data-lang="zh" onclick="setLang('zh')">ZH</button><button data-lang="ko" onclick="setLang('ko')">KO</button></div>
+<div class="dfoot" data-i18n="dfoot">7,777 MADE MEN<br>FIRST MINT FREE · BNB CHAIN</div></aside>
+
+<div class="preview-bar" data-i18n="previewBar">FORGE v2 · MINT OPENS SOON · v1: 60 minted, pausing at launch</div>
+
+<div class="wrap">
+<section class="reveal">
+<div class="seclabel" data-en="SECTION 01 // MARKET" data-ja="SECTION 01 // マーケット" data-zh="SECTION 01 // 市场" data-ko="SECTION 01 // 마켓">SECTION 01 // MARKET</div>
+<h2 data-i18n="marketH2">Trade your <em class="grad">made men</em>.</h2>
+<p data-i18n="marketFeeNote">Market fee: 5% — the seller receives 95% of the sale price. Fees go to the collection owner.</p>
+<p class="mkt-note" data-i18n="royaltyNote">Royalty 5% on every sale. Escrow market — your man stays safe until he sells.</p>
+<div class="mkt-grid" id="marketGrid"><div class="mkt-note" data-i18n="marketOpensLater">The on-chain market opens after the marketplace contract is deployed.</div></div>
+<div class="mkt-form">
+<h3 data-en="List your man" data-ja="構成員を出品" data-zh="挂单你的成员" data-ko="조직원 매물 등록">List your man</h3>
+<input type="number" id="listTokenId" placeholder="Token ID" min="1" max="7777">
+<input type="text" id="listPrice" placeholder="Price in BNB">
+<button class="btn-gold" onclick="listNow()" data-en="LIST" data-ja="出品" data-zh="挂单" data-ko="등록">LIST</button>
+<button class="btn-ghost" id="connectBtn" onclick="connectWallet()" data-en="CONNECT WALLET" data-ja="ウォレットを接続" data-zh="连接钱包" data-ko="지갑 연결">CONNECT WALLET</button>
+<div class="nowallet" id="noWalletWarn"></div>
+<div class="mkt-msg" id="marketMsg"></div>
+</div>
+<div id="mintMsg" style="display:none"></div>
+</section>
+
+<section class="reveal">
+<div class="seclabel" data-en="SECTION 02 // FRESH MEN" data-ja="SECTION 02 // 新しい構成員" data-zh="SECTION 02 // 最新成员" data-ko="SECTION 02 // 새 조직원들">SECTION 02 // FRESH MEN</div>
+<h2 data-en="Latest from<br>the <em class=&quot;grad&quot;>family</em>." data-ja="ファミリーからの<br><em class=&quot;grad&quot;>最新</em>。" data-zh="来自家族的<br><em class=&quot;grad&quot;>最新</em>成员。" data-ko="패밀리에서 온<br><em class=&quot;grad&quot;>최신</em> 소식.">Latest from<br>the <em class="grad">family</em>.</h2>
+<div class="mkt-grid" id="marketBoard" style="display:none"></div>
+<div class="mkt-empty" id="marketEmpty"><b data-i18n="marketEmpty">🎩 <b>No men on the market yet</b> — be the first to mint, be the first to list.</b></div>
+</section>
+</div>
+
+<footer><b>GANGSTER</b> · FORGE v2 — COMING SOON<br><span data-i18n="v2Note">v1: 60 minted — pausing at v2 launch.</span><br>$GANG: <code>0xA1b03171070C75012B64df281300e1EcEf983C4d</code> · v2 NFT / Market / Claim: deploying soon<br><a href="https://x.com/gangstarnft_" target="_blank" rel="noopener">𝕏 @gangstarnft_</a></footer>
+</div>
+<a href="index.html#mint" id="mobileCta">🎩 <span id="ctaCount">—</span> / 7,777 · <span data-en="MINT FREE" data-ja="無料でミント" data-zh="免费铸造" data-ko="무료 민트">MINT FREE</span></a>
+<script src="shared.js"></script>
+</body></html>
